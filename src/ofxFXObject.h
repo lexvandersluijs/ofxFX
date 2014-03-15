@@ -88,6 +88,9 @@ public:
     virtual void    update();
     void            draw(ofRectangle &_rect){ draw(_rect.x,_rect.y,_rect.width,_rect.height);};
     void            draw(int _x = 0, int _y = 0, float _width = -1, float _height = -1);
+
+	// LS: added, sometimes we want to draw with additive blending instead
+	void            draw_dontEnableAlphaBlending(int _x = 0, int _y = 0, float _width = -1, float _height = -1);
     
     int             passes;
     

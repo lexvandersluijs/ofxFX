@@ -327,6 +327,17 @@ void ofxFXObject::draw(int _x, int _y, float _width, float _height){
     ofPopStyle();
 }
 
+// LS: added, sometimes we want to draw with additive blending instead
+void ofxFXObject::draw_dontEnableAlphaBlending(int _x, int _y, float _width, float _height){
+    if (_width == -1) _width = width;
+    if (_height == -1) _height = height;
+    
+    ofPushStyle();
+    //ofEnableAlphaBlending();
+    pingPong.dst->draw(_x, _y, _width, _height);
+    ofPopStyle();
+}
+
 // BUILD-IN functions & variables
 // -------------------------------------
 //
